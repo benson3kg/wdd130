@@ -1,0 +1,162 @@
+/* Universal Selector for Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+/* Center content with max-width */
+header,
+.grid,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+header,
+nav,
+main {
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-bottom: 20px;
+    clear: both;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    /* Add visual separation */
+    padding-top: 10px;
+}
+
+h1 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Navigation - Flexbox */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    /* Dark background for nav bar look */
+    padding: 10px;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Class Selectors */
+/* .box style with margin, padding, border, and colors */
+.box {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    /* Aside fixed width, Main flexible */
+    gap: 20px;
+    align-items: start;
+}
+
+/* Heading Overlay */
+aside h2 {
+    position: absolute;
+    top: 30px;
+    /* Adjust as needed */
+    right: 30px;
+    /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    font-size: 1.2em;
+    border-radius: 4px;
+}
+
+/* Responsive adjustment for Grid (Optional but good practice) */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Audit Fixes */
+main {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    /* Audit Requirement */
+}
+
+main img {
+    width: 150px;
+    /* Example value, adjust as needed */
+    height: auto;
+    border: 1px solid #333;
+    /* Audit Requirement */
+    padding: 5px;
+    /* Audit Requirement */
+    box-shadow: 2px 2px 5px #ccc;
+    /* Audit Requirement */
+}
+
+aside {
+    width: 200px;
+    /* Audit Requirement */
+    margin: 10px;
+    /* Audit Requirement */
+    border: 1px solid #ccc;
+    /* Audit Requirement */
+    padding: 10px;
+    /* Audit Requirement */
+    background-color: #f0f0f0;
+    /* Audit Requirement */
+    color: #333;
+    /* Audit Requirement */
+    text-align: center;
+    position: relative;
+}
+
+aside img {
+    width: 200px;
+    /* Audit Requirement */
+    height: auto;
+    /* Audit Requirement */
+}
+
+p {
+    padding: 0;
+    /* Audit Requirement */
+}
+
+footer {
+    margin-top: 20px;
+    /* Audit Requirement */
+    border-top: 1px solid #000;
+    /* Audit Requirement */
+    text-align: center;
+    /* Audit Requirement */
+}
