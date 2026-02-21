@@ -1,398 +1,75 @@
-/* rafting.css */
-:root {
-    --primary-color: #003049;      /* Dark blue - excellent contrast on light backgrounds (12:1) */
-    --secondary-color: #2b5e3b;    /* Forest green - good contrast (7:1 on white) */
-    --accent-color: #b63e2a;        /* Terra cotta - only use on dark backgrounds or for large text */
-    --text-dark: #1a1a1a;           /* Almost black for body text (contrast ratio 19:1 on white) */
-    --text-light: #ffffff;           /* Pure white for dark backgrounds */
-    --background-light: #f5f5f5;     /* Light gray background */
-    --background-dark: #1e2b37;       /* Dark background for contrast sections */
-    --hero-overlay: rgba(0, 0, 0, 0.6); /* Darker overlay for better text contrast */
-    --button-hover: #1f4a2d;          /* Darker green for hover states */
-    --error-color: #cc0000;            /* High contrast red for errors */
-    --link-color: #0056b3;             /* Accessible blue for links */
-}
-
-/* Base Styles with High Contrast */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', Helvetica, sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--background-light);
-    font-size: 16px; /* Base font size */
-}
-
-/* Header Styles (consistent across all pages) */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: var(--primary-color);
-    border-bottom: 3px solid var(--secondary-color);
-}
-
-header img {
-    height: 60px;
-    width: auto;
-}
-
-nav {
-    display: flex;
-    gap: 2rem;
-}
-
-nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    /* Large text (bold, 16px) - contrast ratio > 4.5:1 */
-}
-
-nav a:hover {
-    background-color: var(--secondary-color);
-    text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--text-light);
-    font-size: 3rem; /* 48px - Large text, 3:1 requirement */
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
-    padding: 1.5rem 3rem;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 800px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    /* Contrast ratio with overlay: > 10:1 */
-}
-
-/* Newsletter Section - High Contrast */
-.newsletter {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 3rem 2rem;
-    text-align: center;
-}
-
-.newsletter h2 {
-    font-size: 2rem; /* 32px - Large text */
-    margin-bottom: 1rem;
-    color: var(--text-light);
-    font-weight: 700;
-}
-
-.newsletter p {
-    font-size: 1.1rem; /* 17.6px - Normal text */
-    margin-bottom: 2rem;
-    color: var(--text-light);
-    /* Contrast ratio against #003049: 8.5:1 */
-}
-
-.newsletter form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.newsletter label {
-    text-align: left;
-    font-weight: bold;
-    color: var(--text-light);
-    font-size: 1rem;
-}
-
-.newsletter input {
-    padding: 0.8rem;
-    border: 2px solid var(--text-light); /* Added border for better visibility */
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: var(--text-light);
-    color: var(--text-dark);
-}
-
-.newsletter input:focus {
-    outline: 3px solid var(--accent-color); /* Focus indicator for accessibility */
-}
-
-.newsletter button {
-    background-color: var(--secondary-color);
-    color: var(--text-light);
-    padding: 1rem;
-    border: 2px solid transparent;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    /* Contrast ratio against white: 7:1 */
-}
-
-.newsletter button:hover {
-    background-color: var(--button-hover);
-    border-color: var(--text-light);
-}
-
-/* Call to Action Section */
-.cta {
-    background: linear-gradient(135deg, var(--secondary-color), #1e4a2a);
-    color: var(--text-light);
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.cta h2 {
-    font-size: 2.5rem; /* 40px - Large text */
-    margin-bottom: 1rem;
-    color: var(--text-light);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-weight: 700;
-}
-
-.cta p {
-    font-size: 1.2rem; /* 19.2px - Normal text, but larger */
-    margin-bottom: 2rem;
-    color: var(--text-light);
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--text-light);
-    padding: 1rem 3rem;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border: 2px solid transparent;
-}
-
-.cta-button:hover {
-    background-color: #9a3222; /* Darker shade with good contrast */
-    border-color: var(--text-light);
-}
-
-/* CSS Grid Layout for Purpose and Offerings */
-.grid-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: var(--background-light);
-}
-
-.grid-heading {
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 2.2rem; /* 35.2px - Large text */
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-weight: 700;
-    /* Contrast ratio against #f5f5f5: 12:1 */
-}
-
-.grid-item {
-    background-color: #ffffff; /* Pure white for maximum contrast */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
-    border: 1px solid #e0e0e0;
-}
-
-.grid-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
-
-.grid-item h3 {
-    padding: 1rem 1rem 0.5rem;
-    color: var(--primary-color);
-    font-size: 1.5rem; /* 24px - Large text */
-    font-weight: 700;
-}
-
-.grid-item p {
-    padding: 0 1rem 1.5rem;
-    color: var(--text-dark);
-    line-height: 1.6;
-    font-size: 1rem;
-    /* Contrast ratio against white: 19:1 */
-}
-
-/* Footer Styles (consistent across all pages) */
-footer {
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-footer p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    /* Contrast ratio against #1e2b37: 12:1 */
-}
-
-footer a {
-    color: var(--text-light);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-}
-
-footer a:hover {
-    border-bottom-color: var(--text-light);
-    text-decoration: none;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    display: inline-block;
-    transition: opacity 0.3s;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 0.5rem;
-    border-radius: 50%;
-}
-
-.social-links a:hover {
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.social-links img {
-    width: 32px;
-    height: 32px;
-    display: block;
-    filter: brightness(0) invert(1); /* Ensures icons are white */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience thrilling white water rafting adventures with Dry Oar Rafting. Join us for unforgettable river expeditions for all skill levels.">
+    <meta name="author" content="Benson">
+    <title>Whitewater Rafting | Home</title>
+    <link rel="stylesheet" href="styles/rafting.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Dry Oar Rafting Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="trips.html">Trips</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
     
-    nav {
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+    <main>
+        <section class="hero">
+            <h1>Rafting Adventure Hero</h1>
+            <p>Experience the Thrill of a Lifetime</p>
+        </section>
+        
+        <section class="happy-rafters">
+            <h2>Happy Rafters</h2>
+            <p>Join us for an unforgettable whitewater rafting journey. Whether you are a beginner or an expert, we have the perfect trip for you.</p>
+        </section>
+        
+        <section class="newsletter">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest trips and adventures.</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+        
+        <section class="cta">
+            <h2>Ready to Hit the Rapids?</h2>
+            <p>Check out our upcoming trips and book your adventure today!</p>
+            <a href="trips.html" class="button">View Trips</a>
+        </section>
+        
+        <section class="team">
+            <h2>Rafting Team</h2>
+            <h3>Expert Guides</h3>
+            <p>Our certified guides ensure your safety and enjoyment on every trip.</p>
+        </section>
+        
+        <section class="scenery">
+            <h3>Scenic River</h3>
+            <h4>Breathtaking Scenery</h4>
+            <p>Immerse yourself in the stunning natural beauty of the river canyons.</p>
+        </section>
+    </main>
     
-    .hero h1 {
-        font-size: 2rem; /* 32px - still large text */
-        padding: 1rem;
-        width: 90%;
-    }
-    
-    .grid-content {
-        grid-template-columns: 1fr;
-        padding: 2rem 1rem;
-    }
-    
-    .cta h2 {
-        font-size: 2rem;
-    }
-    
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* High Contrast Utility Classes */
-.high-contrast-text {
-    color: var(--text-dark);
-    background-color: var(--background-light);
-}
-
-.high-contrast-bg {
-    color: var(--text-light);
-    background-color: var(--background-dark);
-}
-
-/* Focus indicators for accessibility */
-a:focus, button:focus, input:focus {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-/* Ensure all interactive elements have sufficient contrast */
-button, .cta-button, nav a {
-    font-weight: bold;
-}
-
-/* Debugging CSS Overview (as shown in the video) */
-/* To check contrast issues in Chrome:
-   1. Open DevTools (F12)
-   2. Click the three dots menu in the top-right of DevTools
-   3. Go to More Tools > CSS Overview
-   4. Click "Capture Overview" to see contrast issues
-*/
-
-/* Color contrast test cases (for reference):
-   - Normal text (16px): Need 4.5:1 ratio
-   - Large text (24px+): Need 3:1 ratio
-   - UI components: Need 3:1 ratio against adjacent colors
-*/
-
-/* Ensure all text meets WCAG AA standards */
-body, p, li, span, div:not(.hero h1) {
-    color: var(--text-dark);
-}
-
-/* Specific fixes for any potential low contrast elements */
-.newsletter input::placeholder {
-    color: #666666; /* Dark gray with good contrast on white */
-    opacity: 1;
-}
-
-.cta-button:visited {
-    color: var(--text-light);
-}
+    <footer>
+        <p>© 2026 | Dry Oar Rafting | Benson Student</p>
+        <nav class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </nav>
+    </footer>
+</body>
+</html>
